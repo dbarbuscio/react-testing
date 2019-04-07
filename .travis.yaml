@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t dbarbuscio/react-test -f Dockerfile.dev .
+  - docker build -t dbarbuscio/react-testing -f Dockerfile.dev .
 
 script:
-  - docker run dbarbuscio/react-test -- --coverage
+  - docker run dbarbuscio/react-testing -- --coverage
