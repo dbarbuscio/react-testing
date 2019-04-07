@@ -6,4 +6,4 @@ before_install:
   - docker build -t dbarbuscio/react-test -f Dockerfile.dev .
 
 script:
-  - docker run dbarbuscio/react-test -- --coverage
+  - docker run dbarbuscio/react-test yarn test -- --coverage
