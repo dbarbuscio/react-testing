@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run dbarbuscio/react-test yarn test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: react-testing
+  env: "ReactTesting-env"
+  bucket_name: "elasticbeanstalk-us-east-2-215656452330"
+  bucket_path: "react-testing"
+  on:
+    branch: master
+  access_key_id: $AWS_KEY
+  access_secret_key:
+    secure: "$AWS_SECRET"
